@@ -23,6 +23,18 @@ export const cities: City[] = [
   { slug: "gujranwala", name: "Gujranwala", urdu: "گوجرانوالہ", province: "Punjab", note: "Gujranwala's wholesale and retail stores speed up checkout with Posify's barcode billing." },
   { slug: "hyderabad", name: "Hyderabad", urdu: "حیدرآباد", province: "Sindh", note: "Hyderabad's grocery and clothing shops keep daily accounts tidy with Posify." },
   { slug: "bahawalpur", name: "Bahawalpur", urdu: "بہاولپور", province: "Punjab", note: "Bahawalpur's stores and pharmacies handle billing and inventory the easy way with Posify." },
+  { slug: "sargodha", name: "Sargodha", urdu: "سرگودھا", province: "Punjab", note: "Sargodha's citrus-belt traders, grocery stores and clothing shops keep billing and stock tidy with Posify." },
+  { slug: "sahiwal", name: "Sahiwal", urdu: "ساہیوال", province: "Punjab", note: "Sahiwal's shops, restaurants and pharmacies bill faster and track inventory easily with Posify." },
+  { slug: "gujrat", name: "Gujrat", urdu: "گجرات", province: "Punjab", note: "Gujrat's furniture, fan and retail businesses manage sales and stock with Posify's offline POS." },
+  { slug: "sheikhupura", name: "Sheikhupura", urdu: "شیخوپورہ", province: "Punjab", note: "Sheikhupura's kiryana stores and retail shops speed up checkout with Posify's barcode billing." },
+  { slug: "sukkur", name: "Sukkur", urdu: "سکھر", province: "Sindh", note: "Sukkur's bazaars, medical stores and eateries stay organised with Posify's simple POS." },
+  { slug: "larkana", name: "Larkana", urdu: "لاڑکانہ", province: "Sindh", note: "Larkana shopkeepers get fast, Urdu-friendly billing and FBR-ready invoices with Posify." },
+  { slug: "rahim-yar-khan", name: "Rahim Yar Khan", urdu: "رحیم یار خان", province: "Punjab", note: "Rahim Yar Khan's grocery and clothing stores manage daily sales and stock with Posify." },
+  { slug: "mardan", name: "Mardan", urdu: "مردان", province: "Khyber Pakhtunkhwa", note: "Mardan's retail shops and pharmacies run reliably even offline with Posify." },
+  { slug: "abbottabad", name: "Abbottabad", urdu: "ایبٹ آباد", province: "Khyber Pakhtunkhwa", note: "Abbottabad's cafes, shops and medical stores bill quickly with Posify's offline POS." },
+  { slug: "jhang", name: "Jhang", urdu: "جھنگ", province: "Punjab", note: "Jhang's traders and stores keep accounts and inventory in order with Posify." },
+  { slug: "dera-ghazi-khan", name: "Dera Ghazi Khan", urdu: "ڈیرہ غازی خان", province: "Punjab", note: "Dera Ghazi Khan's bazaars and shops handle billing the easy way with Posify." },
+  { slug: "mirpur", name: "Mirpur", urdu: "میرپور", province: "Azad Kashmir", note: "Mirpur's retail and grocery stores keep sales and stock tidy with Posify." },
 ];
 
 export type Business = {

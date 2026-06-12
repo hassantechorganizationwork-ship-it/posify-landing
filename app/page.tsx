@@ -13,6 +13,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import LiveActivity from "@/components/LiveActivity";
 import JsonLd from "@/components/JsonLd";
+import CitiesSeo from "@/components/CitiesSeo";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <Pricing />
         <Testimonials />
         <FAQ />
+        <CitiesSeo />
         <CTA />
       </main>
       <Footer />

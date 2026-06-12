@@ -16,7 +16,7 @@ const solutions = [
 ];
 
 export default function Footer() {
-  const { t } = useLang();
+  const { t, dir } = useLang();
 
   const product = [
     { href: "#features", label: t.footer.links.features },
@@ -130,30 +130,11 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO content — natural keyword-rich paragraph */}
-        <div className="pt-8 mb-8 border-t border-[#21262d]" dir="ltr">
-          <h3 className="text-sm font-bold text-[#c9d1d9] mb-3">Posify — Pakistan ka Complete POS Solution</h3>
+        {/* SEO content — shows in the selected language only */}
+        <div className="pt-8 mb-8 border-t border-[#21262d]" dir={dir}>
+          <h3 className="text-sm font-bold text-[#c9d1d9] mb-3">{t.footer.seoHeading}</h3>
           <p className="text-[13px] text-[#6e7681] leading-relaxed max-w-4xl">
-            Posify is a modern, FBR integrated point of sale software built for every kind of business in Pakistan.
-            Whether you run a restaurant, a grocery or kiryana store, a clothing boutique or a pharmacy and medical
-            store, our POS software handles billing, inventory, barcode scanning and daily sales reports in one place.
-            Because Posify is offline-first, your data stays safely on your own device — no internet needed for day-to-day
-            billing, only for optional FBR sync. Shopkeepers across Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad,
-            Multan, Peshawar, Quetta, Sialkot and Gujranwala use Posify as their everyday retail and billing software.
-            With full Urdu support, JazzCash and Easypaisa payments, and pricing starting at just Rs. 2,000 per month,
-            Posify is the affordable, sasta POS software Pakistani businesses can rely on. Looking for restaurant
-            management software, a pharmacy management system, or a simple cash register software for your dukaan?
-            Start your free trial today and bring your shop online with Pakistan&apos;s smartest POS system.
-          </p>
-
-          {/* Urdu SEO paragraph */}
-          <p lang="ur" dir="rtl" className="text-[14px] text-[#6e7681] leading-loose max-w-4xl mt-5">
-            پوسیفائی پاکستان کا سب سے اسمارٹ پی او ایس سافٹ ویئر ہے جو ریسٹورنٹ، گروسری اور کریانہ اسٹور، بوتیک
-            اور میڈیکل اسٹور سمیت ہر کاروبار کے لیے بنایا گیا ہے۔ یہ ایف بی آر انٹیگریٹڈ بلنگ سافٹ ویئر آف لائن کام
-            کرتا ہے، آپ کا سارا ڈیٹا آپ کے اپنے کمپیوٹر پر محفوظ رہتا ہے اور انٹرنیٹ کی ضرورت نہیں ہوتی۔ لاہور،
-            کراچی، اسلام آباد، راولپنڈی، فیصل آباد، ملتان، پشاور اور سیالکوٹ سمیت پورے پاکستان میں دکاندار
-            پوسیفائی کو اپنی دکان کے سافٹ ویئر کے طور پر استعمال کرتے ہیں۔ صرف 2,000 روپے ماہانہ میں، جاز کیش اور
-            ایزی پیسہ سپورٹ کے ساتھ، یہ پاکستان کا سستا اور بہترین پوائنٹ آف سیل سسٹم ہے۔ آج ہی مفت ٹرائل شروع کریں۔
+            {t.footer.seoText}
           </p>
         </div>
 

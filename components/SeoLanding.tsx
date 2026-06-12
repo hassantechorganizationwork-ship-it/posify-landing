@@ -9,6 +9,7 @@ export type SeoLandingProps = {
   intro: string;
   bullets: string[];
   sections?: { h2: string; body: string }[];
+  faqs?: { q: string; a: string }[];
   relatedTitle: string;
   related: { href: string; label: string }[];
   ctaTitle: string;
@@ -17,7 +18,7 @@ export type SeoLandingProps = {
 };
 
 export default function SeoLanding(props: SeoLandingProps) {
-  const { badge, h1, intro, bullets, sections, relatedTitle, related, ctaTitle, waMessage, jsonLd } = props;
+  const { badge, h1, intro, bullets, sections, faqs, relatedTitle, related, ctaTitle, waMessage, jsonLd } = props;
 
   return (
     <>
@@ -81,8 +82,28 @@ export default function SeoLanding(props: SeoLandingProps) {
           </section>
         )}
 
+        {/* FAQ — visible content backed by FAQPage schema */}
+        {faqs && faqs.length > 0 && (
+          <section className="py-16" style={{ background: "var(--dark-surface)" }}>
+            <div className="max-w-3xl mx-auto px-4 sm:px-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#e6edf3] text-center mb-10">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {faqs.map((f) => (
+                  <details key={f.q} className="group rounded-xl border border-[#21262d] p-5" style={{ background: "var(--dark-bg)" }}>
+                    <summary className="cursor-pointer list-none flex items-center justify-between gap-3 text-[15px] font-semibold text-[#e6edf3]">
+                      {f.q}
+                      <span className="text-indigo-400 transition-transform group-open:rotate-45 shrink-0 text-xl leading-none">+</span>
+                    </summary>
+                    <p className="mt-3 text-sm text-[#8b949e] leading-relaxed">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Internal links */}
-        <section className="py-14" style={{ background: "var(--dark-surface)" }}>
+        <section className="py-14" style={{ background: "var(--dark-bg)" }}>
           <div className="max-w-5xl mx-auto px-4 sm:px-6">
             <h2 className="text-lg font-bold text-[#e6edf3] mb-5">{relatedTitle}</h2>
             <div className="flex flex-wrap gap-2">

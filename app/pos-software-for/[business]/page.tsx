@@ -23,10 +23,28 @@ export async function generateMetadata({ params }: { params: Promise<{ business:
   return {
     title,
     description,
+    keywords: [
+      `${b.name} POS Pakistan`,
+      `${b.name} POS software`,
+      `${b.name} billing software`,
+      `${b.name} management software Pakistan`,
+      `${b.name} software price Pakistan`,
+      "FBR POS software",
+      "offline POS Pakistan",
+    ],
     alternates: { canonical: url },
     openGraph: { type: "website", url, title, description, siteName: "Posify", locale: "en_PK" },
     twitter: { card: "summary_large_image", title, description },
   };
+}
+
+function businessFaqs(name: string, lower: string): { q: string; a: string }[] {
+  return [
+    { q: `How much does ${lower} POS software cost in Pakistan?`, a: `Posify for ${lower} businesses starts at just Rs. 2,000 per month, with a free first month and no hidden charges — unlimited sales, products and reports included.` },
+    { q: `Does the ${lower} POS work offline?`, a: `Yes. Posify is offline-first, so your ${lower} keeps billing even without internet. Your data stays safely on your own computer.` },
+    { q: `Is ${name} POS FBR integrated?`, a: `Yes. If you're FBR registered, connect it in one click for tax-compliant invoices. Otherwise Posify works perfectly without FBR — it's optional.` },
+    { q: `How quickly can I start using Posify for my ${lower} business?`, a: `Setup takes minutes. Message us on WhatsApp at 0317-4065200 and our team gets you running the same day, with free training and support across Pakistan.` },
+  ];
 }
 
 export default async function BusinessPage({ params }: { params: Promise<{ business: string }> }) {
@@ -36,6 +54,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ busin
 
   const url = `${SITE}/pos-software-for/${b.slug}`;
   const others = businesses.filter((x) => x.slug !== b.slug);
+  const faqs = businessFaqs(b.name, b.name.toLowerCase());
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -56,6 +75,14 @@ export default async function BusinessPage({ params }: { params: Promise<{ busin
         areaServed: { "@type": "Country", name: "Pakistan" },
         offers: { "@type": "Offer", price: "2000", priceCurrency: "PKR" },
       },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
     ] as Record<string, unknown>[],
   };
 
@@ -75,6 +102,7 @@ export default async function BusinessPage({ params }: { params: Promise<{ busin
           body: `Start free for the first month, then just Rs. 2,000/month with no hidden charges — unlimited sales, products and reports included. It's the affordable, sasta POS software thousands of Pakistani businesses can rely on.`,
         },
       ]}
+      faqs={faqs}
       relatedTitle="Explore Posify for your business & city"
       related={[
         ...others.map((x) => ({ href: `/pos-software-for/${x.slug}`, label: x.title })),

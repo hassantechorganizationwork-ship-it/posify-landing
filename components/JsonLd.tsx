@@ -7,6 +7,8 @@
  * `aggregateRating` block here once real customer reviews exist.
  */
 
+import { cities as cityData } from "@/lib/seo-data";
+
 const SITE = "https://posify.pk";
 const PHONE = "+923174065200"; // 0317-4065200
 
@@ -19,7 +21,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Which payment methods are supported?", a: "Cash, JazzCash, Easypaisa, bank transfer and card machines — all built in. Split payments across methods are also supported." },
 ];
 
-const cities = ["Lahore", "Karachi", "Islamabad", "Rawalpindi", "Faisalabad", "Multan", "Peshawar", "Quetta", "Sialkot", "Gujranwala", "Hyderabad", "Bahawalpur"];
+const cities = cityData.map((c) => c.name);
 
 const graph: Record<string, unknown>[] = [
   {

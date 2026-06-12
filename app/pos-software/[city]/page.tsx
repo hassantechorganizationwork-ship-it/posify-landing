@@ -23,10 +23,32 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   return {
     title,
     description,
+    keywords: [
+      `POS software ${c.name}`,
+      `POS system ${c.name}`,
+      `point of sale ${c.name}`,
+      `restaurant POS ${c.name}`,
+      `pharmacy software ${c.name}`,
+      `grocery POS ${c.name}`,
+      `billing software ${c.name}`,
+      `retail software ${c.name}`,
+      `FBR POS ${c.name}`,
+      `${c.name} POS software price`,
+    ],
     alternates: { canonical: url },
     openGraph: { type: "website", url, title, description, siteName: "Posify", locale: "en_PK" },
     twitter: { card: "summary_large_image", title, description },
   };
+}
+
+function cityFaqs(name: string): { q: string; a: string }[] {
+  return [
+    { q: `How much does POS software cost in ${name}?`, a: `Posify starts at just Rs. 2,000 per month in ${name}, with your first month completely free and no hidden charges. You get unlimited sales, products and reports.` },
+    { q: `Does Posify POS work offline in ${name}?`, a: `Yes. Posify is offline-first, so shops in ${name} can keep billing even when the internet is down — all your data stays safely on your own computer.` },
+    { q: `Is Posify FBR integrated?`, a: `Yes. Businesses in ${name} can connect FBR in one click for tax-compliant invoices, or use Posify perfectly well without it — FBR is optional.` },
+    { q: `Which businesses in ${name} can use Posify?`, a: `Restaurants and cafes, grocery and kiryana stores, clothing boutiques, and pharmacies and medical stores in ${name} all run on Posify.` },
+    { q: `How do I get Posify POS in ${name}?`, a: `Message us on WhatsApp at 0317-4065200 and our team will set you up the same day in ${name}, with free training and support.` },
+  ];
 }
 
 export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
@@ -36,6 +58,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
   const url = `${SITE}/pos-software/${c.slug}`;
   const otherCities = cities.filter((x) => x.slug !== c.slug).slice(0, 8);
+  const faqs = cityFaqs(c.name);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,6 +89,14 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
         address: { "@type": "PostalAddress", addressLocality: c.name, addressRegion: c.province, addressCountry: "PK" },
         areaServed: { "@type": "City", name: c.name },
       },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
     ] as Record<string, unknown>[],
   };
 
@@ -92,6 +123,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           body: `Posify starts at just Rs. 2,000 per month with no hidden charges and a free first month. Whether you run a single counter or multiple billing counters on a local network, you get unlimited sales, inventory and reports. It's the sasta, dependable POS software ${c.name} businesses can grow with.`,
         },
       ]}
+      faqs={faqs}
       relatedTitle="POS Software in other cities"
       related={[
         ...otherCities.map((x) => ({ href: `/pos-software/${x.slug}`, label: `POS Software in ${x.name}` })),
