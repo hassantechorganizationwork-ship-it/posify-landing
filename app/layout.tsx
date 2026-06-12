@@ -110,7 +110,7 @@ export const metadata: Metadata = {
   },
   // Replace with the real code from Google Search Console once verified.
   verification: {
-    google: "OnGUsK7zbR9-9XOrwVhTt3d7HMGqM-1ZhdI8",
+    google: "OnGUsK7zbR9-9XOrwVhTt3d7HMGqM-1ZhdI8AN1mfa4",
   },
 };
 
