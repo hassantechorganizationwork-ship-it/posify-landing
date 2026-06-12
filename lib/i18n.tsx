@@ -344,6 +344,9 @@ const en = {
     },
     rights: "All rights reserved.",
     made: "Made with ❤️ in Pakistan 🇵🇰",
+    seoHeading: "Posify — Pakistan ka Complete POS Solution",
+    seoText:
+      "Posify is a modern, FBR integrated point of sale software built for every kind of business in Pakistan. Whether you run a restaurant, a grocery or kiryana store, a clothing boutique or a pharmacy and medical store, our POS software handles billing, inventory, barcode scanning and daily sales reports in one place. Because Posify is offline-first, your data stays safely on your own device — no internet needed for day-to-day billing, only for optional FBR sync. Shopkeepers across Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Sialkot and Gujranwala use Posify as their everyday retail and billing software. With full Urdu support, JazzCash and Easypaisa payments, and pricing starting at just Rs. 2,000 per month, Posify is the affordable, sasta POS software Pakistani businesses can rely on. Looking for restaurant management software, a pharmacy management system, or a simple cash register software for your dukaan? Start your free trial today and bring your shop online with Pakistan's smartest POS system.",
   },
 };
 
@@ -675,6 +678,9 @@ const roman: typeof en = {
     },
     rights: "Tamam haqooq mehfooz.",
     made: "Made with ❤️ in Pakistan 🇵🇰",
+    seoHeading: "Posify — Pakistan ka Mukammal POS Solution",
+    seoText:
+      "Posify aik modern, FBR integrated point of sale software hai jo Pakistan ke har qisam ke business ke liye banaya gaya hai. Chahe aap restaurant chalayein, grocery ya kiryana store, clothing boutique ya pharmacy aur medical store — Posify billing, inventory, barcode scanning aur rozana sales reports sab aik jagah handle karta hai. Posify offline-first hai, is liye aap ka saara data aap ke apne computer par mehfooz rehta hai — rozana billing ke liye internet ki zaroorat nahi, sirf optional FBR sync ke liye. Lahore, Karachi, Islamabad, Rawalpindi, Faisalabad, Multan, Peshawar, Quetta, Sialkot aur Gujranwala samet poore Pakistan mein dukandar Posify ko apni dukaan ke software ke tor par istemal karte hain. Full Urdu support, JazzCash aur Easypaisa payments, aur sirf Rs. 2,000 mahana se shuru hone wali pricing ke saath, Posify sasta aur behtareen POS software hai. Aaj hi free trial shuru karein.",
   },
 };
 
@@ -1006,6 +1012,9 @@ const ur: typeof en = {
     },
     rights: "جملہ حقوق محفوظ ہیں۔",
     made: "محبت ❤️ کے ساتھ پاکستان میں بنایا 🇵🇰",
+    seoHeading: "پوسیفائی — پاکستان کا مکمل پی او ایس حل",
+    seoText:
+      "پوسیفائی پاکستان کا سب سے اسمارٹ پی او ایس سافٹ ویئر ہے جو ریسٹورنٹ، گروسری اور کریانہ اسٹور، بوتیک اور میڈیکل اسٹور سمیت ہر کاروبار کے لیے بنایا گیا ہے۔ یہ ایف بی آر انٹیگریٹڈ بلنگ سافٹ ویئر آف لائن کام کرتا ہے، آپ کا سارا ڈیٹا آپ کے اپنے کمپیوٹر پر محفوظ رہتا ہے اور انٹرنیٹ کی ضرورت نہیں ہوتی۔ لاہور، کراچی، اسلام آباد، راولپنڈی، فیصل آباد، ملتان، پشاور اور سیالکوٹ سمیت پورے پاکستان میں دکاندار پوسیفائی کو اپنی دکان کے سافٹ ویئر کے طور پر استعمال کرتے ہیں۔ صرف 2,000 روپے ماہانہ میں، جاز کیش اور ایزی پیسہ سپورٹ کے ساتھ، یہ پاکستان کا سستا اور بہترین پوائنٹ آف سیل سسٹم ہے۔ آج ہی مفت ٹرائل شروع کریں۔",
   },
 };
 
